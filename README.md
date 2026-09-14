@@ -1,6 +1,6 @@
 ﻿# 📉 Customer Churn Prediction & Risk Mitigation System
 
-![Missing Value Rate per Feature](plot/exsum.png.png)
+![Missing Value Rate per Feature](plot/exsum.png)
 
 ---
 
