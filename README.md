@@ -1,4 +1,4 @@
-﻿# 📉 Customer Churn Prediction & Risk Mitigation System
+# 📉 Customer Churn Prediction & Risk Mitigation System
 
 ![Missing Value Rate per Feature](plot/exsum.png)
 
@@ -50,6 +50,23 @@ Proyek ini bertujuan untuk membangun *end-to-end Machine Learning Pipeline* yang
 * **Fluktuasi Tagihan Bulanan:** Pelanggan yang mengalami ketidakstabilan biaya tagihan cenderung lebih sensitif terhadap keputusan *churn*.
 
 ---
+
+## Risk Analysis
+
+### A. Segmentasi Risiko Pelanggan 
+Berdasarkan distribusi probabilitas model pada populasi pelanggan:
+* **High Risk (4.3% dari populasi | Churn Rate Riil: 88.9%):** Sebanyak **4,303 pelanggan** berada pada segmen paling kritis ( > 75%).
+* **Medium Risk (46.9% dari populasi | Churn Rate Riil: 63.7%):** Segmen transisi yang membutuhkan pemantauan berkala ( 50% - 75%).
+* **Low Risk (48.8% dari populasi | Churn Rate Riil: 32.5%):** Segmen paling stabil dengan risiko terkecil ($\text{Prob} < 0.50%).
+
+### B. Intervention Scenario pada High Risk Group
+| Skenario Intervensi | Success Rate | Pelanggan Terselamatkan  | Saved Revenue | Keuntungan Bersih  | ROI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Pessimistic Scenario** | **10%** | **~430 user** | **$303.000** | **$87.800** | **+41%** |
+| **Moderate Scenario** | **15%** | **~645 user** | **$454.000** | **$239.300** | **+111%** |
+| **Optimistic Scenario** | **25%** | **~1.075 user** | **$757.000** | **$542.300** | **+252%**
+---
+Angka ini didasarkan pada asumsi perusahaan mengalokasi biaya untuk mempertahankan customer sebesar $50 per orang (fixed budget $215.150) yang difokuskan pada 4.303 pelanggan segmen paling kritis ( > 0,75% probabilitas). Setiap pelanggan yang berhasil ditahan menyumbang pendapatan tahunan sebesar ~$704 (rata-rata tagihan bulanan $58,72 dikalikan 12 bulan). Pada skenario respon terburuk 10% (hanya 430 pelanggan yang batal churn), total pendapatan yang diselamatkan mencapai $303.000, sehingga perusahaan tetap memperoleh keuntungan bersih sebesar $87.800 (+41% ROI) setelah dikurangi biaya modal promosi.
 
 ## Recommendation
 
